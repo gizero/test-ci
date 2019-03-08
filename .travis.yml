@@ -2,17 +2,15 @@
 #services:
 #  - docker
 #install: true
-#stages:
-#  - test
+stages:
+  - test
 #  - name: push-image
 #    if: type != pull_request
 
-script: uname -a
-
-#jobs:
-#  include:
-#    - stage: test
-#      script:
+jobs:
+  include:
+    - stage: test
+      script: uname -a
 #      - ./runTestsAll.sh
 #    - stage: push-image
 #      if: tag IS present
